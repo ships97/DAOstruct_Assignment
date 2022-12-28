@@ -1,10 +1,14 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
+import Header from "../Component/Header";
 
 const Nasa = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Box>
+        <Header />
+      </Box>
+    </>
   )
 }
 
