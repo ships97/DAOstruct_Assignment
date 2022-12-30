@@ -25,6 +25,17 @@ const Nasa = () => {
       <Box>
         <Header />
         <Box className={styles.main}>
+          <Heading>Spotlight section</Heading>
+          <Box className={styles.up}>
+            <Heading size={"md"}>Lunation Matrix</Heading>
+            <Text style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace: "nowrap", width: "350px"}}>LOREM</Text>
+            <Text size={"md"}>Author :- Tunc Tezel</Text>
+          </Box>
+          <Box className={styles.up1}>
+            <Image className={styles.imag} src="" alt="moon" />
+          </Box>
+        </Box>
+        <Box>
           <Grid className={styles.sub}>
             {data.map((e,i) => {
               return (
@@ -33,9 +44,9 @@ const Nasa = () => {
                     e.media_type === "image" ? <Image className={styles.imag1} src={e.hdurl} alt="image" /> : <iframe className={styles.imag1} src={e.url} alt="video" />
                   }
                   <Heading size={"md"}>{e.title} , {e.date}</Heading>
-                  <Text style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace: "nowrap", width: "350px"}}>{e.explanation}</Text>
+                  {/* <Text style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace: "nowrap", width: "350px"}}>{e.explanation}</Text> */}
                   <Text size={"md"}>Author :- {e.copyright}</Text>
-                  <Text>Media-Type :- {e.media_type}</Text>
+                  {/* <Text>Media-Type :- {e.media_type}</Text> */}
                 </GridItem>
               )
             })}

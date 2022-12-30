@@ -1,5 +1,7 @@
 .main{
     border: 1px solid red;
+    display: flex;
+    margin-bottom: 50px;
 }
 .sub{
     border: 1px solid blue;
@@ -11,8 +13,17 @@
 }
 .mid{
     border: 1px solid green;
+    width: 350px;
+    cursor: pointer;
 }
 .imag1{
     height: 300px;
     width: 100%;
+}
+.up{
+    border: 1px solid red;
+    margin-left: 300px;
+}
+.up1{
+    border: 1px solid blue;
 }
