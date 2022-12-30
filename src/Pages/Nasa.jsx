@@ -1,8 +1,9 @@
-import { Box,Grid,GridItem,Image } from '@chakra-ui/react';
+import { Box,Grid,GridItem,Heading,Image, Text } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import Header from "../Component/Header";
 import { useState } from 'react';
 import axios from 'axios';
+import styles from '../Styles/Nasa.module.css';
 
 const Nasa = () => {
   const [data, setData] = useState([]);
@@ -23,12 +24,18 @@ const Nasa = () => {
     <>
       <Box>
         <Header />
-        <Box>
-          <Grid>
+        <Box className={styles.main}>
+          <Grid className={styles.sub}>
             {data.map((e,i) => {
               return (
-                <GridItem key={i}>
-                  <Image src={e.url} alt="image" />
+                <GridItem className={styles.mid} key={i}>
+                  {
+                    e.media_type === "image" ? <Image className={styles.imag1} src={e.hdurl} alt="image" /> : <iframe className={styles.imag1} src={e.url} alt="video" />
+                  }
+                  <Heading size={"md"}>{e.title} , {e.date}</Heading>
+                  <Text style={{overflow:"hidden",textOverflow:"ellipsis",whiteSpace: "nowrap", width: "350px"}}>{e.explanation}</Text>
+                  <Text size={"md"}>Author :- {e.copyright}</Text>
+                  <Text>Media-Type :- {e.media_type}</Text>
                 </GridItem>
               )
             })}
