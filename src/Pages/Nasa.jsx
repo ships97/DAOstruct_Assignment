@@ -75,20 +75,18 @@ const Nasa = () => {
                   ))
                 : data?.map((e, i) => {
                     return (
-                      <GridItem className={styles.mid} key={i}>
+                      <GridItem className={styles.mid} key={i} onClick={() => handleSpotLightData(i)}>
                         {e.media_type === "image" ? (
                           <Image
                             className={styles.imag1}
                             src={e.hdurl}
                             alt="image"
-                            onClick={() => handleSpotLightData(i)}
                           />
                         ) : (
                           <iframe
                             className={styles.imag1}
                             src={e.url}
                             alt="video"
-                            onClick={() => handleSpotLightData(i)}
                           />
                         )}
                         <Heading size={"md"}>
