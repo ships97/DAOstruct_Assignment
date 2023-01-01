@@ -49,7 +49,6 @@ const Nasa = () => {
       <Box>
         <Header />
         <Box className={styles.main}>
-          <Heading>Spotlight section</Heading>
           <SpotLight data={spotLightData} /> 
         </Box>
         <Box>
